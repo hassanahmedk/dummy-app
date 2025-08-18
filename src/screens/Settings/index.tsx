@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 
-export default function SettingsScreen({ navigation }: any) {
+export function SettingsScreen({ navigation }: any) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Settings Screen</Text>

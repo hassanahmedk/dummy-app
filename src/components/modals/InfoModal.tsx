@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function InfoScreen() {
+export default function InfoModal() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Info Screen</Text>
