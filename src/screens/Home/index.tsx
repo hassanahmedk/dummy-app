@@ -16,7 +16,8 @@ import {
   View,
 } from "react-native";
 
-type Mode = "feed" | "search";
+type Mode = string;
+//
 
 export function HomeScreen({ navigation }: any) {
   const [users, setUsers] = useState<any[]>([]);
