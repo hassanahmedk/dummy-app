@@ -1,6 +1,6 @@
 import { Provider } from "react-redux";
 import AppNavigator from "./src/navigation/AppNavigator";
-import { store } from "./src/store";
+import { store } from "./src/store/rtk";
 
 export default function App() {
   return (

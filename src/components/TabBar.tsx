@@ -52,8 +52,6 @@ function MyTabBar({ state, descriptors, navigation }: any) {
               target: route.key,
             });
           };
-
-          // Icon names (per route)
           const iconName =
             route.name === "Home"
               ? isFocused

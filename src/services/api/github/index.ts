@@ -1,4 +1,4 @@
-import { api } from "../../../store/api";
+import { api } from "../../../store/rtk/api";
 export type GithubUser = {
   login: string;
   id: number;
