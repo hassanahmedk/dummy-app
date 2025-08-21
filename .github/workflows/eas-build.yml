@@ -27,6 +27,6 @@ jobs:
       - name: Run EAS build
         run: |
           npx eas-cli whoami
-          npx eas-cli build --platform all --non-interactive
+          npx eas-cli build --platform android --non-interactive
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
