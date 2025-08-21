@@ -47,3 +47,14 @@ jobs:
         run: |
           echo "EAS Build URL: $BUILD_URL"
           echo "APK Download: $APK_URL"
+
+      - name: Save build links
+        run: |
+          echo "EAS Build URL: $BUILD_URL" > build-links.txt
+          echo "APK Download: $APK_URL" >> build-links.txt
+
+      - name: Upload build links artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-links
+          path: build-links.txt
