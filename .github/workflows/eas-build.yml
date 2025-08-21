@@ -54,7 +54,7 @@ jobs:
           echo "APK Download: $APK_URL" >> build-links.txt
 
       - name: Upload build links artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-links
           path: build-links.txt
