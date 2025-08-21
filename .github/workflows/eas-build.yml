@@ -25,8 +25,25 @@ jobs:
         run: npm install
 
       - name: Run EAS build
+        id: eas
         run: |
           npx eas-cli whoami
-          npx eas-cli build --platform android --non-interactive
+          build_output=$(npx eas-cli build --platform android --non-interactive --json)
+          echo "Build output: $build_output"
+
+          build_url=$(echo $build_output | jq -r '.[0].webUrl')
+          apk_url=$(echo $build_output | jq -r '.[0].artifacts.buildUrl')
+
+          echo "EAS Build Dashboard: $build_url"
+          echo "Direct APK link: $apk_url"
+
+          # Export for other steps if needed
+          echo "BUILD_URL=$build_url" >> $GITHUB_ENV
+          echo "APK_URL=$apk_url" >> $GITHUB_ENV
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Print Build Links
+        run: |
+          echo "EAS Build URL: $BUILD_URL"
+          echo "APK Download: $APK_URL"
