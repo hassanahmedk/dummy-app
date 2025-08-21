@@ -10,8 +10,14 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "associatedDomains": ["applinks:app.example.com"],
-      "bundleIdentifier": "com.example.myapp"
+      "associatedDomains": [
+        "applinks:app.example.com",
+        "applinks:app.example.com"
+      ],
+      "bundleIdentifier": "com.example.myapp",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -29,9 +35,13 @@
               "host": "app.example.com"
             }
           ],
-          "category": ["BROWSABLE", "DEFAULT"]
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
         }
-      ]
+      ],
+      "package": "com.example.myapp"
     },
     "plugins": [
       [
@@ -46,6 +56,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "08d32c99-77ca-416c-8abc-3e01789bd31f"
+      }
     }
   }
 }
